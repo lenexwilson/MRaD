@@ -1,0 +1,92 @@
+/* Container for services section */
+.services-section {
+  padding: 80px 40px;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent to show video behind */
+  text-align: center;
+  color: #fff; /* white text for contrast */
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Section title */
+.services-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #ff00ff; /* violet accent */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* subtle shadow for depth */
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center; /* centers cards in each grid cell */
+}
+
+/* Individual service card */
+.service-card {
+  background: rgba(255, 255, 255, 0.1); /* slightly transparent card */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* stronger shadow for depth */
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px); /* adds frosted glass effect */
+  color: #fff;
+  text-align: center;
+}
+
+/* Hover effect for cards */
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 0, 255, 0.5); /* violet glow effect */
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Card image */
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ff00ff; /* violet border for emphasis */
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+.service-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Card heading */
+.service-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #ff00ff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+/* Card paragraph */
+.service-card p {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .services-section {
+    padding: 60px 20px;
+  }
+  .services-title {
+    font-size: 2.5rem;
+  }
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+  }
+}

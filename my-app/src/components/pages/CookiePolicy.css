@@ -1,0 +1,82 @@
+.cookie-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent so video shows */
+  color: #fff;
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 0, 255, 0.2);
+  position: relative;
+  z-index: 1; /* above video */
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Headings and paragraph */
+.cookie-container h1 {
+  color: #ff00ff;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.cookie-container p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Cookie options container */
+.cookie-options {
+  margin-top: 20px;
+}
+
+.cookie-options h2 {
+  color: #ff00ff;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Each cookie item */
+.cookie-item {
+  display: block;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ff00ff;
+  border-radius: 10px;
+  background: rgba(34, 34, 34, 0.7); /* semi-transparent dark background */
+}
+
+.cookie-item input {
+  margin-right: 10px;
+  accent-color: #ff00ff; /* checkbox color */
+}
+
+.cookie-item span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.cookie-item p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 5px 0 0 25px; /* indent text */
+}
+
+/* Save button */
+.save-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #ff00ff;
+  color: #000;
+  border: 2px solid #ff00ff;
+}

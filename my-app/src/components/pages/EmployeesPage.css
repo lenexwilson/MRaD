@@ -1,0 +1,79 @@
+.employee-page {
+  padding: 20px;
+  background-color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center; /* ✅ center all text inside the page */
+}
+
+.employee-page h1 {
+  color: #6a11cb;
+}
+
+.worksheet-form {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column; /* ✅ stack inputs and button vertically */
+  align-items: center;    /* ✅ center everything */
+}
+
+.worksheet-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 200px; /* optional fixed width for uniformity */
+}
+
+.worksheet-form button {
+  padding: 10px 20px;
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px; /* space above button */
+  width: 150px;      /* optional fixed width */
+  text-align: center;
+}
+
+.worksheet-form button:hover {
+  background-color: #2575fc;
+}
+
+
+.employee-page table {
+  width: 90%;
+  margin: 0 auto; /* center table */
+  border-collapse: collapse;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  color: black;
+  text-align: center; /* ✅ center table content */
+}
+
+.employee-page th,
+.employee-page td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  color: black;
+  text-align: center; /* ✅ center cell content */
+}
+
+.employee-page th {
+  background-color: #6a11cb;
+  color: white;
+}
+
+.employee-page tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.employee-page tr:hover {
+  background-color: #f1f1f1;
+}

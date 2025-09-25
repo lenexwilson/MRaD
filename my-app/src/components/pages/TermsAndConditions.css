@@ -1,0 +1,65 @@
+.terms-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #111;
+  color: #fff;
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 0, 255, 0.2);
+  text-align: left;
+}
+
+.terms-container h1 {
+  color: #ff00ff;
+  margin-bottom: 15px;
+}
+
+.terms-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.statement {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox-item input {
+  margin-right: 10px;
+  accent-color: #ff00ff; /* makes checkbox violet */
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: #000;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff00ff;
+  color: #000;
+}
+.statement {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0 0 15px 25px; /* small indent from checkbox */
+  line-height: 1.5;
+}

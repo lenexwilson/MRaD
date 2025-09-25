@@ -1,0 +1,87 @@
+/* Container & Box */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: Arial, sans-serif;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  color: #6a11cb;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.auth-box p {
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Form Inputs & Select */
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+}
+
+/* Buttons */
+.btn-auth {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a11cb;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-auth:hover {
+  background-color: #2575fc;
+}
+
+/* Login redirect */
+.login-redirect {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-button {
+  background: none;
+  border: none;
+  color: #6a11cb;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.login-button:hover {
+  color: #2575fc;
+}

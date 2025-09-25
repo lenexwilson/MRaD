@@ -1,0 +1,70 @@
+/* Page container for privacy and terms */
+.privacy-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: transparent; /* video will show behind */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Privacy and Terms container */
+.privacy-container, .terms-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(0,0,0,0.6); /* semi-transparent black */
+  color: #fff;
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+  font-family: 'PT Sans', sans-serif;
+  box-shadow: 0 4px 20px rgba(255, 0, 255, 0.2);
+  position: relative;
+  z-index: 1; /* above video */
+}
+
+/* Headings */
+.privacy-container h1, .terms-container h1 {
+  font-size: 3rem;
+  color: #ff00ff;
+  margin-bottom: 20px;
+  text-align: center; /* main heading centered */
+}
+
+.privacy-container h2, .terms-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ff00ff;
+  text-align: left; /* section headings left-aligned */
+}
+
+/* Paragraphs */
+.privacy-container p, .terms-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: justify; /* sentences aligned neatly on both sides */
+}
+
+/* Lists */
+.privacy-container ul, .terms-container ul {
+  list-style: disc;
+  margin-left: 30px;
+  color: #fff;
+}
+
+.privacy-container li, .terms-container li {
+  margin-bottom: 10px;
+  text-align: justify; /* list items justified */
+}
+
+/* Links */
+.privacy-container a, .terms-container a {
+  color: #ff00ff;
+  text-decoration: none;
+}
+
+.privacy-container a:hover, .terms-container a:hover {
+  text-decoration: underline;
+}
