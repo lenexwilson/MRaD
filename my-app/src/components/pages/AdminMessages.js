@@ -1,8 +1,7 @@
+// src/components/pages/AdminMessages.js
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../api"; // ✅ corrected path
 import "./AdminMessages.css";
-
-const BACKEND_URL = "http://localhost:5000";
 
 function AdminMessages() {
   const [messages, setMessages] = useState([]);
@@ -10,7 +9,6 @@ function AdminMessages() {
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData] = useState({ hoursWorked: "", summary: "" });
 
-  // Fetch messages + worksheets on load
   useEffect(() => {
     fetchMessages();
     fetchWorksheets();
@@ -23,7 +21,7 @@ function AdminMessages() {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/api/messages`);
+      const res = await api.get("/messages");
       setMessages(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("❌ Error fetching messages:", err);
@@ -32,7 +30,7 @@ function AdminMessages() {
 
   const fetchWorksheets = async () => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/api/worksheets/admin/all`);
+      const res = await api.get("/worksheets/admin/all");
       setWorksheets(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("❌ Error fetching worksheets:", err);
@@ -46,7 +44,7 @@ function AdminMessages() {
 
   const saveEdit = async (id) => {
     try {
-      await axios.put(`${BACKEND_URL}/api/worksheets/${id}`, editData);
+      await api.put(`/worksheets/${id}`, editData);
       setEditingId(null);
       fetchWorksheets();
     } catch (err) {
@@ -62,7 +60,6 @@ function AdminMessages() {
         <p>Manage contact messages and employee worksheets</p>
       </header>
 
-      {/* Contact Messages Section */}
       <section className="messages-section">
         <h2>Contact Messages</h2>
         {messages.length === 0 ? (
@@ -105,7 +102,6 @@ function AdminMessages() {
         )}
       </section>
 
-      {/* Employee Worksheets Section */}
       <section className="worksheets-section">
         <h2>Employee Worksheets</h2>
         {worksheets.length === 0 ? (
