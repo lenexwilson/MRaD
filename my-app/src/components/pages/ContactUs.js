@@ -26,7 +26,7 @@ function ContactUs() {
     if (!formData.acceptTerms) return alert("Please accept the Terms & Conditions!");
 
     try {
-      await axios.post("http://localhost:5000/api/messages/contact", formData);
+      await axios.post("/api/messages/contact", formData);
       alert("Form submitted successfully!");
       setFormData({
         name: "",

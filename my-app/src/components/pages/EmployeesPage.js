@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./EmployeesPage.css";
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "/api";
 
 function EmployeesPage() {
   const [hoursWorked, setHoursWorked] = useState("");

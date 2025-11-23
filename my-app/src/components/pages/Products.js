@@ -63,7 +63,7 @@ function Products() {
   const handleBuy = async (product) => {
     try {
       // Call backend to create Razorpay order
-      const res = await fetch("http://localhost:5000/create-order", {
+      const res = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: product.price }),

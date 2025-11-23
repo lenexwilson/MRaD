@@ -1,36 +1,59 @@
 // src/components/pages/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../api"; // ✅ corrected path
+import api from "../../api"; // axios instance with baseURL '/api'
 import "./Login.css";
 
+/**
+ * Login component
+ * - Uses relative API calls via the `api` axios instance (baseURL '/api')
+ * - Stores token, role and userId on successful login
+ * - Handles cases where backend returns user._id instead of user.id
+ */
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
+      // relative path -> will call /api/auth/login (proxied by nginx in production)
       const res = await api.post("/auth/login", { email, password });
-      const { token, user } = res.data;
+
+      // backend returns { user, token }
+      const { token, user } = res.data || {};
 
       if (!token || !user) {
         alert("Login failed. Please try again.");
+        setLoading(false);
         return;
       }
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("role", user.role.toLowerCase());
-      localStorage.setItem("userId", user.id);
+      // user id can be _id (Mongo) or id — handle both
+      const userId = user._id || user.id || user.userId || null;
 
-      const userRole = user.role.toLowerCase();
+      localStorage.setItem("token", token);
+      if (user.role) localStorage.setItem("role", user.role.toLowerCase());
+      if (userId) localStorage.setItem("userId", userId);
+
+      // Optional: set Authorization header for future requests in this session
+      // api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+      const userRole = (user.role || "").toLowerCase();
       if (userRole === "admin") navigate("/admin/messages");
       else if (userRole === "employee") navigate("/employees");
       else navigate("/users");
     } catch (err) {
-      console.error("Login error:", err.response?.data || err);
-      alert(err.response?.data?.error || "Invalid credentials!");
+      // Prefer backend error message if available
+      const message = err?.response?.data?.error || err?.message || "Invalid credentials!";
+      console.error("Login error:", err?.response?.data || err);
+      alert(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,6 +69,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
             className="login-input"
             required
+            autoComplete="username"
           />
           <input
             type="password"
@@ -54,9 +78,10 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="login-input"
             required
+            autoComplete="current-password"
           />
-          <button type="submit" className="login-button">
-            Login
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? "Logging in…" : "Login"}
           </button>
         </form>
         <p className="login-footer">
